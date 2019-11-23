@@ -1,0 +1,34 @@
+{
+  "Login": {
+    "login": "Login",
+    "username": "User",
+    "password": "Password",
+    "login-button": "Login"
+  },
+  "flights-searcher": {
+    "from": "From",
+    "to": "To",
+    "one-way": "One-way",
+    "return": "Return"
+  },
+  "register": {
+    "register": "Register",
+    "first_name": "Name",
+    "last_name": "Surname",
+    "adres": "Adress",
+    "email": "Email",
+    "password": "Password",
+    "register-button": "Register"
+  },
+  "menu-bar": {
+    "login": "Login",
+    "register": "Register",
+    "information": "Information"
+  },
+  "footer": {
+    "service": "Service",
+    "about": "About flights",
+    "contact": "Contacts",
+    "more_info": "Details"
+  }
+}

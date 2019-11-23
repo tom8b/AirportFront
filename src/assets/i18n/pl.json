@@ -1,0 +1,35 @@
+{
+  "Login": {
+    "login": "Logowanie",
+    "username": "Użytkownik",
+    "password": "Hasło",
+    "login-button": "Zaloguj"
+  },
+  "flights-searcher": {
+    "from": "Skąd",
+    "to": "Dokąd",
+    "one-way": "W jedną strone",
+    "return": "W dwie strony"
+  },
+  "register": {
+    "register": "Rejestracja",
+    "first_name": "Imię",
+    "last_name": "Nazwisko",
+    "adres": "Adres",
+    "email": "Email",
+    "password": "Hasło",
+    "register-button": "Zarejestruj"
+  },
+  "menu-bar": {
+    "login": "Zaloguj",
+    "register": "Rejestracja",
+    "register-button": "Zarajestruj",
+    "information": "informacje"
+  },
+  "footer": {
+    "service": "Obsługa klienta",
+    "about": "O lotach",
+    "contact": "Kontakt",
+    "more_info": "Sczegóły"
+  }
+}

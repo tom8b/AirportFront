@@ -1,0 +1,15 @@
+<mat-card>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="From" />
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="To" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>way-option</mat-label>
+    <select matNativeControl required>
+      <option value="One-way" [translate]="'flights-searcher.one-way'"></option>
+      <option value="Return" [translate]="'flights-searcher.return'"></option>
+    </select>
+  </mat-form-field>
+</mat-card>

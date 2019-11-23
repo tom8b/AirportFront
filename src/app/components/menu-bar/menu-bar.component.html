@@ -1,0 +1,30 @@
+<mat-toolbar>
+  <span class="logo" routerLink="/home" routerLinkActive="active"
+    >INTELIGENTNE LOTNISKO</span
+  >
+  <a
+    routerLink="/login"
+    routerLinkActive="active"
+    [translate]="'menu-bar.login'"
+  ></a>
+
+  <a
+    [translate]="'menu-bar.register'"
+    routerLink="/register"
+    routerLinkActive="active"
+    class="choice"
+  ></a>
+  <a
+    [translate]="'menu-bar.information'"
+    class="choice"
+    routerLink="/home"
+    routerLinkActive="active"
+  ></a>
+
+  <!-- <mat-toolbar mat-form-field>
+    <select matNativeControl required>
+      <option value="PL">PL</option>
+      <option value="ENG">ENG</option>
+    </select>
+  </mat-toolbar> -->
+</mat-toolbar>
