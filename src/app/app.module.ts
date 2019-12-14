@@ -25,6 +25,7 @@ import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 import { HomeComponent } from "./components/home/home.component";
+import { ConnectionService } from "./services/connection-service";
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { HomeComponent } from "./components/home/home.component";
     })
   ],
   bootstrap: [AppComponent],
-  exports: [MatMenuModule]
+  exports: [MatMenuModule],
+  providers: [ConnectionService]
 })
 export class AppModule {}
 
