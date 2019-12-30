@@ -12,7 +12,7 @@ export class ConnectionService {
     this.usersUrl = "http://localhost:8080/users";
   }
 
-  public findAll(): Observable<Connection[]> {
-    return this.http.get<Connection[]>(this.usersUrl);
+  public findAll(): Observable<Object> {
+    return this.http.get<Object>(this.usersUrl);
   }
 }

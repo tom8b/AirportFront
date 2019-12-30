@@ -8,13 +8,15 @@ import { Connection } from "src/app/models/Connection";
   styleUrls: ["./footer.component.css"]
 })
 export class FooterComponent implements OnInit {
-  public connections: Connection[];
+  public connections: Array<Connection>;
+
   constructor(public connectionService: ConnectionService) {}
 
   ngOnInit() {}
 
   public getConnections() {
-    this.connectionService.findAll().subscribe(x => (this.connections = x));
-    console.log("WORK!!");
+    this.connectionService.findAll().subscribe(x => {
+      console.log(x);
+    });
   }
 }
