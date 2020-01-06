@@ -7,12 +7,14 @@ import { Connection } from "../models/Connection";
 @Injectable()
 export class ConnectionService {
   private usersUrl: string;
+  private deleteConnectionUrl: string;
 
   constructor(private http: HttpClient) {
-    this.usersUrl = "http://localhost:8080/users";
+    this.usersUrl = "http://localhost:8080/connections/all";
+    this.deleteConnectionUrl = "http://localhost:8080/connections/del"
   }
 
-  public findAll(): Observable<Object> {
-    return this.http.get<Object>(this.usersUrl);
+  public getAll(): Observable<Connection[]> {
+    return this.http.get<Connection[]>(this.usersUrl);
   }
 }
