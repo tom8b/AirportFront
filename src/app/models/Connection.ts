@@ -5,11 +5,11 @@
   destination_airport_ID: number;
   flight_date: Date;
 }*/
-
+import { Airport } from '../models/Airport';
 export class Connection {
   connectionId: string;
   price: string;
-  starting_airport_ID: string;
-  destination_airport_ID: string;
+  starting_airport: Airport;
+  destination_airport: Airport;
   flight_date: string;
 }

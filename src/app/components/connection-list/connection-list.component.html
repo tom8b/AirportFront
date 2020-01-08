@@ -3,14 +3,16 @@
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
+        <th scope="col">Starting Airport</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Price</th>
+        <th scope="col">Date</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let connection of connections">
-        <td>{{ connection.connectionId }}</td>
+        <td>{{ connection.starting_airport.city.name }}</td>
+        <td>{{ connection.destination_airport.city.name }}</td>
         <td>{{ connection.price }}</td>
         <td><a href="mailto:{{ connection.flight_date }}">{{ connection.flight_date }}</a></td>
       </tr>

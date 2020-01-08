@@ -11,7 +11,6 @@ export class ConnectionService {
 
   constructor(private http: HttpClient) {
     this.usersUrl = "http://localhost:8080/connections/all";
-    this.deleteConnectionUrl = "http://localhost:8080/connections/del"
   }
 
   public getAll(): Observable<Connection[]> {
