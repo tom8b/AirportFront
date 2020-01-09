@@ -15,7 +15,7 @@ export class FooterComponent implements OnInit {
   ngOnInit() {}
 
   public getConnections() {
-    this.connectionService.findAll().subscribe(x => {
+    this.connectionService.getAll().subscribe(x => {
       console.log(x);
     });
   }

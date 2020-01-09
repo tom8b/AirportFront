@@ -26,6 +26,8 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 import { HomeComponent } from "./components/home/home.component";
 import { ConnectionService } from "./services/connection-service";
+import { ConnectionListComponent } from "./components/connection-list/connection-list.component";
+//import { ConnectionListComponent } from './services/connection-list/connection-list.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { ConnectionService } from "./services/connection-service";
     MainContentComponent,
     FooterComponent,
     FlightsSearcherComponent,
-    routingComponents
+    routingComponents,
+    ConnectionListComponent
   ],
   imports: [
     BrowserModule,
