@@ -22,6 +22,8 @@
   },
   "menu-bar": {
     "login": "Login",
+    "logout": "Logout",
+    "reservations": "Rezerwacje",
     "register": "Register",
     "information": "Information"
   },

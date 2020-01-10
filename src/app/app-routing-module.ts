@@ -5,6 +5,9 @@ import { LoginComponent } from "./components/login/login.component";
 import { FlightsSearcherComponent } from "./components/flights-searcher/flights-searcher.component";
 import { RegisterComponent } from "./components/register/register.component";
 import { ConnectionListComponent } from "./components/connection-list/connection-list.component";
+import { LogoutComponent } from "./components/logout/logout.component";
+import { ReservationsComponent } from "./components/reservations/reservations.component";
+import { SingleConnectionComponent } from "./components/single-connection/single-connection.component";
 
 const routes: Routes = [
   {
@@ -13,7 +16,10 @@ const routes: Routes = [
   },
   { path: "register", component: RegisterComponent },
   { path: "home", component: FlightsSearcherComponent },
-  { path: "connections", component: ConnectionListComponent }
+  { path: "connections", component: ConnectionListComponent },
+  { path: "logout", component: LogoutComponent },
+  { path: "reservations", component: ReservationsComponent },
+  { path: "singleConnection/:id", component: SingleConnectionComponent }
 ];
 
 @NgModule({
@@ -24,5 +30,8 @@ export class AppRoutingModule {}
 export const routingComponents = [
   HomeComponent,
   LoginComponent,
-  RegisterComponent
+  RegisterComponent,
+  LogoutComponent,
+  ReservationsComponent,
+  SingleConnectionComponent
 ];
