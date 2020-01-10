@@ -1,35 +1,50 @@
 <mat-toolbar>
-  <span class="logo" routerLink="/home" routerLinkActive="active">INTELIGENTNE
-    LOTNISKO</span>
+  <span class="logo" routerLink="/home" routerLinkActive="active"
+    >INTELIGENTNE LOTNISKO</span
+  >
 
-
-
-
-
+  <div>hello</div>
 
   <a *ngIf="loginService.isUserLoggedIn()">Welcome again</a>
 
-  <a *ngIf="loginService.isUserLoggedIn()"
+  <a
+    *ngIf="loginService.isUserLoggedIn()"
     [translate]="'menu-bar.information'"
     class="choice"
     routerLink="/home"
-    routerLinkActive="active"></a>
-
-  <a *ngIf="loginService.isUserLoggedIn()" [translate]="'menu-bar.logout'"
-    class="choice" routerLink="/logout"
-    routerLinkActive="active"></a>
-
-  <a *ngIf="loginService.isUserLoggedIn()" [translate]="'menu-bar.reservations'"
-    class="choice" routerLink="/reservations"
-    routerLinkActive="active"></a>
-
-  <a *ngIf="!loginService.isUserLoggedIn()" [translate]="'menu-bar.register'"
-    routerLink="/register"
-    routerLinkActive="active" class="choice"></a>
-
-  <a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login"
     routerLinkActive="active"
-    [translate]="'menu-bar.login'"></a>
+  ></a>
+
+  <a
+    *ngIf="loginService.isUserLoggedIn()"
+    [translate]="'menu-bar.logout'"
+    class="choice"
+    routerLink="/logout"
+    routerLinkActive="active"
+  ></a>
+
+  <a
+    *ngIf="loginService.isUserLoggedIn()"
+    [translate]="'menu-bar.reservations'"
+    class="choice"
+    routerLink="/reservations"
+    routerLinkActive="active"
+  ></a>
+
+  <a
+    *ngIf="!loginService.isUserLoggedIn()"
+    [translate]="'menu-bar.register'"
+    routerLink="/register"
+    routerLinkActive="active"
+    class="choice"
+  ></a>
+
+  <a
+    *ngIf="!loginService.isUserLoggedIn()"
+    routerLink="/login"
+    routerLinkActive="active"
+    [translate]="'menu-bar.login'"
+  ></a>
   <!-- <mat-toolbar mat-form-field>
     <select matNativeControl required>
       <option value="PL">PL</option>
