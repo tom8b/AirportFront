@@ -30,7 +30,7 @@ export class AutenticationService {
 
   isUserLoggedIn() {
     let user = sessionStorage.getItem("userName");
-    console.log(!(user === null));
+    //console.log(!(user === null));
     return !(user === null);
   }
 
