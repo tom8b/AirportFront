@@ -30,6 +30,7 @@ import { ConnectionListComponent } from "./components/connection-list/connection
 import { MatInputModule } from "@angular/material";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { MatListModule } from "@angular/material/list";
+import { ReservationListComponent } from './components/reservation-list/reservation-list.component';
 
 //import { ConnectionListComponent } from './services/connection-list/connection-list.component';
 
@@ -41,7 +42,8 @@ import { MatListModule } from "@angular/material/list";
     FooterComponent,
     FlightsSearcherComponent,
     routingComponents,
-    ConnectionListComponent
+    ConnectionListComponent,
+    ReservationListComponent
   ],
   imports: [
     BrowserModule,
