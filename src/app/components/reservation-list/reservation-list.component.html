@@ -1,0 +1,26 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Starting Airport</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Price</th>
+        <th scope="col">Date</th>
+        <th scope="col">Row</th>
+        <th scope="col">Number</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let reservation of reservations">
+        <td>{{ reservation.connection.starting_airport.city.name }}</td>
+        <td>{{ reservation.connection.destination_airport.city.name }}</td>
+        <td>{{ reservation.connection.price }}</td>
+        <td>{{ reservation.connection.flight_date }}</td>
+        <td>{{ reservation.seat.row }}</td>
+        <td>{{ reservation.seat.seat_number }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

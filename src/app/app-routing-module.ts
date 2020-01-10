@@ -6,8 +6,8 @@ import { FlightsSearcherComponent } from "./components/flights-searcher/flights-
 import { RegisterComponent } from "./components/register/register.component";
 import { ConnectionListComponent } from "./components/connection-list/connection-list.component";
 import { LogoutComponent } from "./components/logout/logout.component";
-import { ReservationsComponent } from "./components/reservations/reservations.component";
 import { SingleConnectionComponent } from "./components/single-connection/single-connection.component";
+import { ReservationListComponent} from "./components/reservation-list/reservation-list.component";
 
 const routes: Routes = [
   {
@@ -18,8 +18,8 @@ const routes: Routes = [
   { path: "home", component: FlightsSearcherComponent },
   { path: "connections", component: ConnectionListComponent },
   { path: "logout", component: LogoutComponent },
-  { path: "reservations", component: ReservationsComponent },
-  { path: "connections/:id", component: SingleConnectionComponent }
+  { path: "connections/:id", component: SingleConnectionComponent },
+  { path: "reservations", component: ReservationListComponent }
 ];
 
 @NgModule({
@@ -32,6 +32,6 @@ export const routingComponents = [
   LoginComponent,
   RegisterComponent,
   LogoutComponent,
-  ReservationsComponent,
+  ReservationListComponent,
   SingleConnectionComponent
 ];

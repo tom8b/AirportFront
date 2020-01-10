@@ -4,6 +4,6 @@ export class Seat {
   seat_id: number;
   row: number;
   seat_number: number;
-  conection: Connection;
+  connection: Connection;
   is_reserved: boolean;
 }
