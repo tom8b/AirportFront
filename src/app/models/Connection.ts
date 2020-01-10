@@ -1,4 +1,5 @@
 import { Airport } from "../models/Airport";
+
 export class Connection {
   connectionId: number;
   price: string;
