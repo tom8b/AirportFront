@@ -10,6 +10,6 @@ export class ReservationService {
   constructor(private http: HttpClient) {}
 
   public getAllReservationsByUserId(id: string): Observable<Reservation[]> {
-    return this.http.get<Reservation[]>("http://localhost:8080/client/getReservations/"+id);
+    return this.http.get<Reservation[]>("http://localhost:8080/reservation/getReservationsForUser/"+id);
   }
 }
