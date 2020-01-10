@@ -14,7 +14,7 @@
                 [(ngModel)]="username"
                 name="username"
                 required
-              />
+                />
             </mat-form-field>
           </td>
         </tr>
@@ -28,7 +28,7 @@
                 type="password"
                 name="password"
                 required
-              />
+                />
             </mat-form-field>
           </td>
         </tr>
@@ -38,9 +38,8 @@
   <mat-card-actions>
     <button
       mat-raised-button
-      (click)="login()"
+      (click)="checkLogin()"
       color="primary"
-      [translate]="'Login.login-button'"
-    ></button>
+      [translate]="'Login.login-button'"></button>
   </mat-card-actions>
 </mat-card>

@@ -27,6 +27,7 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HomeComponent } from "./components/home/home.component";
 import { ConnectionService } from "./services/connection-service";
 import { ConnectionListComponent } from "./components/connection-list/connection-list.component";
+import { MatInputModule } from "@angular/material";
 //import { ConnectionListComponent } from './services/connection-list/connection-list.component';
 
 @NgModule({
@@ -52,6 +53,7 @@ import { ConnectionListComponent } from "./components/connection-list/connection
     MatFormFieldModule,
     MatCheckboxModule,
     MatRadioModule,
+    MatInputModule,
     MatSelectModule,
     MatIconModule,
     MatCardModule,

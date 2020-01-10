@@ -22,6 +22,8 @@
   },
   "menu-bar": {
     "login": "Zaloguj",
+    "logout": "Wyloguj",
+    "reservations": "Rezerwacje",
     "register": "Rejestracja",
     "register-button": "Zarajestruj",
     "information": "informacje"

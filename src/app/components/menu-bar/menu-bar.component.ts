@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { AutenticationService } from "src/app/services/login/autentication.service";
 
 @Component({
   selector: "app-menu-bar",
@@ -6,7 +7,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./menu-bar.component.css"]
 })
 export class MenuBarComponent implements OnInit {
-  constructor() {}
+  constructor(public loginService: AutenticationService) {}
 
   ngOnInit() {}
 }
