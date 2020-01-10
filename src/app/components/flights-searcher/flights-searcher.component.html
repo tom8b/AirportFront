@@ -1,15 +1,38 @@
 <mat-card>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="From" />
+    <input
+      [(ngModel)]="startPoint"
+      type="text"
+      matInput
+      placeholder="From"
+      [matAutocomplete]="autoGroup"
+    />
+    <mat-autocomplete #autoGroup="matAutocomplete">
+      <mat-option *ngFor="let airport of airports" [value]="airport.city.name">
+        {{ airport.city.name }}, {{ airport.address }}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="To" />
+    <input
+      [(ngModel)]="destinationPoint"
+      type="text"
+      matInput
+      placeholder="To"
+      [matAutocomplete]="autoGroup"
+    />
+    <mat-autocomplete #autoGroup="matAutocomplete">
+      <mat-option *ngFor="let airport of airports" [value]="airport.city.name">
+        {{ airport.city.name }}, {{ airport.address }}
+      </mat-option>
+    </mat-autocomplete>
   </mat-form-field>
-  <mat-form-field>
-    <mat-label>way-option</mat-label>
-    <select matNativeControl required>
-      <option value="One-way" [translate]="'flights-searcher.one-way'"></option>
-      <option value="Return" [translate]="'flights-searcher.return'"></option>
-    </select>
-  </mat-form-field>
+  <button (click)="searchConnections()">Search</button>
+
+  <mat-list>
+    <b *ngIf="avaiableConnectionsAmount === 0">ANY AVAIABLE CONNECTIONS</b>
+    <mat-list-item *ngFor="let connection of avaiableConnections">
+      <a>DATE: {{ connection.flight_date }} PRICE:{{ connection.price }}$</a>
+    </mat-list-item>
+  </mat-list>
 </mat-card>

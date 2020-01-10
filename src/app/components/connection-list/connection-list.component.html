@@ -14,9 +14,17 @@
           <td>{{ connection.starting_airport.city.name }}</td>
           <td>{{ connection.destination_airport.city.name }}</td>
           <td>{{ connection.price }}</td>
-          <td><a href="mailto:{{ connection.flight_date }}">{{
-              connection.flight_date }}</a></td>
-          <button>INFO</button>
+          <td>
+            <a href="mailto:{{ connection.flight_date }}">{{
+              connection.flight_date
+            }}</a>
+          </td>
+          <a
+            routerLink="/connections/{{ connection.connectionId }}"
+            routerLinkActive="active"
+            class="choice"
+            >INFO</a
+          >
         </tr>
       </tbody>
     </table>

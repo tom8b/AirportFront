@@ -28,6 +28,9 @@ import { HomeComponent } from "./components/home/home.component";
 import { ConnectionService } from "./services/connection-service";
 import { ConnectionListComponent } from "./components/connection-list/connection-list.component";
 import { MatInputModule } from "@angular/material";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MatListModule } from "@angular/material/list";
+
 //import { ConnectionListComponent } from './services/connection-list/connection-list.component';
 
 @NgModule({
@@ -54,6 +57,8 @@ import { MatInputModule } from "@angular/material";
     MatCheckboxModule,
     MatRadioModule,
     MatInputModule,
+    MatListModule,
+    MatAutocompleteModule,
     MatSelectModule,
     MatIconModule,
     MatCardModule,

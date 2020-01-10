@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: "connections", component: ConnectionListComponent },
   { path: "logout", component: LogoutComponent },
   { path: "reservations", component: ReservationsComponent },
-  { path: "singleConnection/:id", component: SingleConnectionComponent }
+  { path: "connections/:id", component: SingleConnectionComponent }
 ];
 
 @NgModule({
