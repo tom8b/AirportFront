@@ -29,10 +29,56 @@
   </mat-form-field>
   <button (click)="searchConnections()">Search</button>
 
-  <mat-list>
-    <b *ngIf="avaiableConnectionsAmount === 0">ANY AVAIABLE CONNECTIONS</b>
-    <mat-list-item *ngFor="let connection of avaiableConnections">
-      <a>DATE: {{ connection.flight_date }} PRICE:{{ connection.price }}$</a>
-    </mat-list-item>
-  </mat-list>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th [translate]="'general.destination'" scope="col">Destination</th>
+          <th [translate]="'general.price'" scope="col">Price</th>
+          <th [translate]="'general.date'" scope="col">Date</th>
+          <th [translate]="'general.more'" scope="col">More</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let connection of avaiableConnections">
+          <td>
+            {{ connection.starting_airport.city.name }},
+            {{ connection.starting_airport.address }}
+          </td>
+          <td>
+            {{ connection.destination_airport.city.name }},
+            {{ connection.destination_airport.address }}
+          </td>
+          <td>{{ connection.price }}</td>
+          <td>{{ connection.flight_date }}</td>
+          <td>
+            <a
+              routerLink="/connections/{{ connection.connectionId }}"
+              routerLinkActive="active"
+              class="choice"
+              >INFO</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <h4>Order by</h4>
+  <mat-form-field>
+    <select matNativeControl [(ngModel)]="order">
+      <option [translate]="'general.dateInc'" value="DateInc"
+        >Date (early first)</option
+      >
+      <option [translate]="'general.dateDesc'" value="DateDesc"
+        >Date (lately first)</option
+      >
+      <option [translate]="'general.priceInc'" value="PriceInc"
+        >Price (cheap first)</option
+      >
+      <option [translate]="'general.priceDesc'" value="PriceDesc"
+        >Price (expensive first)</option
+      >
+    </select>
+  </mat-form-field>
+  <button (click)="applyFilter()" [translate]="'general.apply'">apply</button>
 </mat-card>

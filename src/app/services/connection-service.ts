@@ -33,4 +33,33 @@ export class ConnectionService {
       "http://localhost:8080/connections/search/"
     );
   }
+
+  public filterConnections(
+    order: string,
+    connections: Connection[]
+  ): Connection[] {
+    if (order == "DateInc") {
+      connections.sort((val1, val2) => {
+        return (
+          <any>new Date(val2.flight_date) - <any>new Date(val1.flight_date)
+        );
+      });
+    } else if (order == "DateDesc") {
+      connections.sort((val1, val2) => {
+        return (
+          <any>new Date(val1.flight_date) - <any>new Date(val2.flight_date)
+        );
+      });
+    } else if (order == "PriceInc") {
+      connections.sort((val1, val2) => {
+        return <any>new Date(val1.price) - <any>new Date(val2.price);
+      });
+    } else if (order == "PriceDesc") {
+      connections.sort((val1, val2) => {
+        return <any>new Date(val2.price) - <any>new Date(val1.price);
+      });
+    }
+
+    return connections;
+  }
 }

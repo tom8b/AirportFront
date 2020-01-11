@@ -15,7 +15,7 @@ export class RegisterService {
     console.log("EPEPEPEP");
     return this.http
       .post<Client>(
-        "https://localhost:8080/client/register",
+        "http://localhost:8080/client/register",
         JSON.stringify(client),
         { headers: this.headers }
       )

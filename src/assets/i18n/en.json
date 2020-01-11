@@ -23,14 +23,29 @@
   "menu-bar": {
     "login": "Login",
     "logout": "Logout",
-    "reservations": "Rezerwacje",
+    "reservations": "Rezervations",
     "register": "Register",
-    "information": "Information"
+    "information": "Information",
+    "search": "Search",
+    "connections": "Connections"
   },
   "footer": {
     "service": "Service",
     "about": "About flights",
     "contact": "Contacts",
     "more_info": "Details"
+  },
+  "general": {
+    "order_by": "Order by",
+    "apply": "Apply",
+    "starting_airport": "Starting Airport",
+    "destination": "Destination",
+    "price": "Price",
+    "date": "Date",
+    "more": "More",
+    "dateDesc": "date (early first)",
+    "dateInc": "date (lately first)",
+    "priceDesc": "price (expensive first)",
+    "priceInc": "price (cheap first)"
   }
 }

@@ -26,12 +26,27 @@
     "reservations": "Rezerwacje",
     "register": "Rejestracja",
     "register-button": "Zarajestruj",
-    "information": "informacje"
+    "information": "informacje",
+    "search": "Szukaj",
+    "connections": "Połączenia"
   },
   "footer": {
     "service": "Obsługa klienta",
     "about": "O lotach",
     "contact": "Kontakt",
     "more_info": "Sczegóły"
+  },
+  "general": {
+    "order_by": "Sortuj według",
+    "apply": "zastosuj",
+    "starting_airport": "Lotnisko startowe",
+    "destination": "Cel",
+    "price": "Cena",
+    "date": "Data",
+    "more": "Więcej",
+    "dateDesc": "data (najpierw najmłodsze)",
+    "dateInc": "date (najpierw najstarsze)",
+    "priceDesc": "cena (malejąco)",
+    "priceInc": "price (rosnąco)"
   }
 }
