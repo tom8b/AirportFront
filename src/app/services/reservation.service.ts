@@ -23,9 +23,13 @@ export class ReservationService {
   }
 
   public reserveConnection(reservation: Reservation) {
-    return this.http.post<Reservation[]>(
+    return this.http.post<Reservation>(
       "http://localhost:8080/reservation",
       reservation
     );
+  }
+
+  public changeStateOfSeat(seat: Seat) {
+    return this.http.put<Seat>("http://localhost:8080/seat/reserve", seat);
   }
 }

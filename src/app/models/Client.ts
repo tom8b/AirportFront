@@ -6,5 +6,5 @@ export class Client {
   surname: string;
   email: string;
   admin_permission: boolean;
-  reservations: string[];
+  //reservations: string[];
 }

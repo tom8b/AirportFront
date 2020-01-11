@@ -5,6 +5,6 @@ import { Client } from "../models/Client";
 export class Reservation {
   reservation_id: number;
   connection: Connection;
-  client_id: number;
+  client: Client;
   seat: Seat;
 }
