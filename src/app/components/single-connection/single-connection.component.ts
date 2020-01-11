@@ -22,6 +22,9 @@ export class SingleConnectionComponent implements OnInit {
   reservation: Reservation;
   client: Client;
 
+  spresp: any;
+  postdata: Reservation;
+
   constructor(
     private route: ActivatedRoute,
     private connectionService: ConnectionService,
@@ -59,12 +62,10 @@ export class SingleConnectionComponent implements OnInit {
     this.reservation.client = this.client;
     this.reservation.reservation_id = 2;
 
-    this.reservationService.reserveConnection(this.reservation); //nie dziala poniewaz nie ma reservation_id,
+    //this.reservationService.reserveConnection(this.reservation);
     this.userSeat.reserved = true;
-
-    var x = JSON.stringify(this.userSeat);
-    console.log(x);
-    this.reservationService.changeStateOfSeat(this.userSeat);
+    //this.reservationService.changeStateOfSeat(this.userSeat);
+    this.testFunc();
   }
 
   getClientInfo() {
@@ -72,5 +73,9 @@ export class SingleConnectionComponent implements OnInit {
     this.clientService.getUserData(clientId).subscribe(x => {
       this.client = x;
     });
+  }
+
+  testFunc() {
+    this.reservationService.testFunction(this.connection);
   }
 }

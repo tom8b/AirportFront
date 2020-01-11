@@ -32,9 +32,6 @@ export class RegisterComponent implements OnInit {
     this.user.admin_permission = false;
     // this.user.reservations = [];
 
-    var x = JSON.stringify(this.user);
-    console.log("JSON" + x);
-
     this.registerService.registerNewClient(this.user);
   }
 }
