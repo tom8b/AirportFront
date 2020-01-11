@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Client } from "../models/Client";
 import { Observable } from "rxjs";
 
@@ -7,15 +7,18 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class RegisterService {
+  headers = new HttpHeaders({ "Content-Type": "application/json" });
+
   constructor(private http: HttpClient) {}
 
-  public registerNewClient(client: Client): Observable<Client> {
+  public registerNewClient(client: Client) {
     console.log("EPEPEPEP");
-    var x = this.http.put<Client>(
-      "https://localhost:8080/client/register",
-      client
-    );
-
-    return x;
+    return this.http
+      .post<Client>(
+        "https://localhost:8080/client/register",
+        JSON.stringify(client),
+        { headers: this.headers }
+      )
+      .subscribe();
   }
 }
