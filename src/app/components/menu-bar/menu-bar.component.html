@@ -3,23 +3,11 @@
     >INTELIGENTNE LOTNISKO</span
   >
 
-  <div>hello</div>
-
-  <a *ngIf="loginService.isUserLoggedIn()">Welcome again</a>
-
   <a
     *ngIf="loginService.isUserLoggedIn()"
     [translate]="'menu-bar.information'"
     class="choice"
     routerLink="/home"
-    routerLinkActive="active"
-  ></a>
-
-  <a
-    *ngIf="loginService.isUserLoggedIn()"
-    [translate]="'menu-bar.logout'"
-    class="choice"
-    routerLink="/logout"
     routerLinkActive="active"
   ></a>
 
@@ -45,10 +33,26 @@
     routerLinkActive="active"
     [translate]="'menu-bar.login'"
   ></a>
-  <!-- <mat-toolbar mat-form-field>
-    <select matNativeControl required>
-      <option value="PL">PL</option>
-      <option value="ENG">ENG</option>
-    </select>
-  </mat-toolbar> -->
+
+  <a
+    *ngIf="loginService.isUserLoggedIn()"
+    routerLink="/connections"
+    routerLinkActive="active"
+    [translate]="'menu-bar.connections'"
+  ></a>
+
+  <a
+    *ngIf="loginService.isUserLoggedIn()"
+    routerLink="/search"
+    routerLinkActive="active"
+    [translate]="'menu-bar.search'"
+  ></a>
+
+  <a
+    *ngIf="loginService.isUserLoggedIn()"
+    [translate]="'menu-bar.logout'"
+    class="choice"
+    routerLink="/logout"
+    routerLinkActive="active"
+  ></a>
 </mat-toolbar>

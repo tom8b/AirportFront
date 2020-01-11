@@ -16,6 +16,7 @@ export class FlightsSearcherComponent {
   destinationPoint: string;
   avaiableConnections: Connection[] = [];
   avaiableConnectionsAmount: number;
+  order: string = "date";
 
   constructor(
     private airportService: AirportService,
@@ -23,7 +24,6 @@ export class FlightsSearcherComponent {
   ) {}
 
   ngOnInit() {
-    console.log("dziala to >?");
     this.getAllAirports();
   }
 
@@ -43,5 +43,12 @@ export class FlightsSearcherComponent {
 
   searchConnections() {
     this.getAvaiableConnections();
+  }
+
+  applyFilter() {
+    this.avaiableConnections = this.connectionsService.filterConnections(
+      this.order,
+      this.avaiableConnections
+    );
   }
 }

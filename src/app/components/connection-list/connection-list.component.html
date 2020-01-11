@@ -1,12 +1,15 @@
-<div class="card my-5">
+<mat-card>
   <div class="card-body">
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">Starting Airport</th>
-          <th scope="col">Destination</th>
-          <th scope="col">Price</th>
-          <th scope="col">Date</th>
+          <th [translate]="'general.starting_airport'" scope="col">
+            Starting Airport
+          </th>
+          <th [translate]="'general.destination'" scope="col">Destination</th>
+          <th [translate]="'general.price'" scope="col">Price</th>
+          <th [translate]="'general.date'" scope="col">Date</th>
+          <th [translate]="'general.more'" scope="col">More</th>
         </tr>
       </thead>
       <tbody>
@@ -29,4 +32,22 @@
       </tbody>
     </table>
   </div>
-</div>
+  <h4 [translate]="'general.order_by'">Order by</h4>
+  <mat-form-field>
+    <select matNativeControl [(ngModel)]="order">
+      <option [translate]="'general.dateInc'" value="DateInc"
+        >Date (early first)</option
+      >
+      <option [translate]="'general.dateDesc'" value="DateDesc"
+        >Date (lately first)</option
+      >
+      <option [translate]="'general.priceInc'" value="PriceInc"
+        >Price (cheap first)</option
+      >
+      <option [translate]="'general.priceDesc'" value="PriceDesc"
+        >Price (expensive first)</option
+      >
+    </select>
+  </mat-form-field>
+  <button (click)="applyFilter()" [translate]="'general.apply'">apply</button>
+</mat-card>

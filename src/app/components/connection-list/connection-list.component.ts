@@ -10,11 +10,21 @@ import { Airport } from "../../models/Airport";
 })
 export class ConnectionListComponent implements OnInit {
   connections: Connection[];
+  order: string = "Date";
   constructor(private connectionService: ConnectionService) {}
 
   ngOnInit() {
     this.connectionService.getAll().subscribe(data => {
       this.connections = data;
+      this.connections = this.connections.sort(a => parseInt(a.price));
+      this.applyFilter();
     });
+  }
+
+  applyFilter() {
+    this.connections = this.connectionService.filterConnections(
+      this.order,
+      this.connections
+    );
   }
 }
