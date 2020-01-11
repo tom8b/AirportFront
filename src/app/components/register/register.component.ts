@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
     this.user.surname = this.surname;
     this.user.password = this.password;
     this.user.admin_permission = false;
-    this.user.reservations = [];
+    // this.user.reservations = [];
 
     var x = JSON.stringify(this.user);
     console.log("JSON" + x);
