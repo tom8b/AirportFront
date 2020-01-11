@@ -7,7 +7,7 @@ import { RegisterComponent } from "./components/register/register.component";
 import { ConnectionListComponent } from "./components/connection-list/connection-list.component";
 import { LogoutComponent } from "./components/logout/logout.component";
 import { SingleConnectionComponent } from "./components/single-connection/single-connection.component";
-import { ReservationListComponent} from "./components/reservation-list/reservation-list.component";
+import { ReservationListComponent } from "./components/reservation-list/reservation-list.component";
 
 const routes: Routes = [
   {
@@ -15,7 +15,8 @@ const routes: Routes = [
     component: LoginComponent
   },
   { path: "register", component: RegisterComponent },
-  { path: "home", component: FlightsSearcherComponent },
+  { path: "home", component: HomeComponent },
+  { path: "search", component: FlightsSearcherComponent },
   { path: "connections", component: ConnectionListComponent },
   { path: "logout", component: LogoutComponent },
   { path: "connections/:id", component: SingleConnectionComponent },
@@ -33,5 +34,6 @@ export const routingComponents = [
   RegisterComponent,
   LogoutComponent,
   ReservationListComponent,
-  SingleConnectionComponent
+  SingleConnectionComponent,
+  HomeComponent
 ];

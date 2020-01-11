@@ -1,6 +1,7 @@
-import { Airport } from '../models/Airport';
+import { Airport } from "../models/Airport";
+
 export class Connection {
-  connectionId: string;
+  connectionId: number;
   price: string;
   starting_airport: Airport;
   destination_airport: Airport;

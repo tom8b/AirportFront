@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { RouterModule, Routes, ActivatedRoute } from "@angular/router";
 import { ConnectionService } from "src/app/services/connection-service";
 import { Connection } from "src/app/models/Connection";
+import { ReservationService } from "src/app/services/reservation.service";
+import { Seat } from "src/app/models/Seat";
+import { Reservation } from "src/app/models/reservation";
 
 @Component({
   selector: "app-single-connection",
@@ -12,10 +15,14 @@ export class SingleConnectionComponent implements OnInit {
   sub: any;
   id: number;
   connection: Connection;
+  freeSlots: Seat[];
+  userSeat: Seat;
+  reservation: Reservation;
 
   constructor(
     private route: ActivatedRoute,
-    private connectionService: ConnectionService
+    private connectionService: ConnectionService,
+    private reservationService: ReservationService
   ) {}
 
   ngOnInit() {
@@ -28,8 +35,28 @@ export class SingleConnectionComponent implements OnInit {
   getConnectionInfo() {
     this.connectionService.getSingleConnectionById(this.id).subscribe(x => {
       this.connection = x;
+      this.getFreeSlots();
     });
   }
 
-  getFreeSeats() {}
+  getFreeSlots() {
+    this.reservationService
+      .getFreeSlots(this.connection.connectionId)
+      .subscribe(x => {
+        this.freeSlots = x;
+      });
+  }
+
+  reserveSlot() {
+    this.reservation = new Reservation();
+    this.reservation.connection = this.connection;
+    this.reservation.seat = this.userSeat;
+    this.reservation.client_id = parseInt(sessionStorage.getItem("userId"));
+    this.reservation.reservation_id = 2;
+
+    this.reservationService.reserveConnection(this.reservation); //nie dziala poniewaz nie ma reservation_id,
+
+    var x = JSON.stringify(this.reservation);
+    console.log(x);
+  }
 }
