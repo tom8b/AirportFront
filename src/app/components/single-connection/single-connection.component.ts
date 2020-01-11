@@ -4,6 +4,7 @@ import { ConnectionService } from "src/app/services/connection-service";
 import { Connection } from "src/app/models/Connection";
 import { ReservationService } from "src/app/services/reservation.service";
 import { Seat } from "src/app/models/Seat";
+import { Reservation } from "src/app/models/reservation";
 
 @Component({
   selector: "app-single-connection",
@@ -15,7 +16,8 @@ export class SingleConnectionComponent implements OnInit {
   id: number;
   connection: Connection;
   freeSlots: Seat[];
-  seatId: number;
+  userSeat: Seat;
+  reservation: Reservation;
 
   constructor(
     private route: ActivatedRoute,
@@ -46,6 +48,15 @@ export class SingleConnectionComponent implements OnInit {
   }
 
   reserveSlot() {
-    console.log(this.seatId);
+    this.reservation = new Reservation();
+    this.reservation.connection = this.connection;
+    this.reservation.seat = this.userSeat;
+    this.reservation.client_id = parseInt(sessionStorage.getItem("userId"));
+    this.reservation.reservation_id = 2;
+
+    this.reservationService.reserveConnection(this.reservation); //nie dziala poniewaz nie ma reservation_id,
+
+    var x = JSON.stringify(this.reservation);
+    console.log(x);
   }
 }

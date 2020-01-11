@@ -20,8 +20,8 @@
 
   <mat-form-field>
     <mat-label>Avaiable slots</mat-label>
-    <mat-select [(ngModel)]="seatId">
-      <mat-option *ngFor="let slot of freeSlots" [value]="slot.seat_id">
+    <mat-select [(ngModel)]="userSeat">
+      <mat-option *ngFor="let slot of freeSlots" [value]="slot">
         ROW:{{ slot.row }}, NUMBER: {{ slot.number }}
       </mat-option>
     </mat-select>

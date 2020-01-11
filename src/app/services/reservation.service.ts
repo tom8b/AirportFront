@@ -21,4 +21,11 @@ export class ReservationService {
       "http://localhost:8080/reservation/getReservationsForUser/" + id
     );
   }
+
+  public reserveConnection(reservation: Reservation) {
+    return this.http.post<Reservation[]>(
+      "http://localhost:8080/reservation",
+      reservation
+    );
+  }
 }
