@@ -66,22 +66,24 @@
       </tbody>
     </table>
   </div>
-  <h4>Order by</h4>
-  <mat-form-field>
-    <select matNativeControl [(ngModel)]="order">
-      <option [translate]="'general.dateInc'" value="DateInc"
-        >Date (early first)</option
-      >
-      <option [translate]="'general.dateDesc'" value="DateDesc"
-        >Date (lately first)</option
-      >
-      <option [translate]="'general.priceInc'" value="PriceInc"
-        >Price (cheap first)</option
-      >
-      <option [translate]="'general.priceDesc'" value="PriceDesc"
-        >Price (expensive first)</option
-      >
-    </select>
-  </mat-form-field>
-  <button (click)="applyFilter()" [translate]="'general.apply'">apply</button>
+  <div class="filter">
+    <h4 [translate]="'general.order_by'">Order by</h4>
+    <mat-form-field>
+      <select matNativeControl [(ngModel)]="order">
+        <option [translate]="'general.dateInc'" value="DateInc"
+          >Date (early first)</option
+        >
+        <option [translate]="'general.dateDesc'" value="DateDesc"
+          >Date (lately first)</option
+        >
+        <option [translate]="'general.priceInc'" value="PriceInc"
+          >Price (cheap first)</option
+        >
+        <option [translate]="'general.priceDesc'" value="PriceDesc"
+          >Price (expensive first)</option
+        >
+      </select>
+    </mat-form-field>
+    <button (click)="applyFilter()" [translate]="'general.apply'">apply</button>
+  </div>
 </mat-card>
