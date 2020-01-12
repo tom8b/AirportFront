@@ -74,10 +74,6 @@ export class SingleConnectionComponent implements OnInit {
     });
   }
 
-  testFunc() {
-    this.reservationService.testFunction(this.connection);
-  }
-
   refreshSlots() {
     this.getFreeSlots();
   }
