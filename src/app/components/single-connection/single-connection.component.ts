@@ -62,10 +62,9 @@ export class SingleConnectionComponent implements OnInit {
     this.reservation.client = this.client;
     this.reservation.reservation_id = 2;
 
-    //this.reservationService.reserveConnection(this.reservation);
-    this.userSeat.reserved = true;
-    //this.reservationService.changeStateOfSeat(this.userSeat);
-    this.testFunc();
+    this.reservationService.reserveConnection(this.reservation);
+    this.reservationService.changeStateOfSeat(this.reservation.seat.seat_id);
+    this.refreshSlots();
   }
 
   getClientInfo() {
@@ -77,5 +76,9 @@ export class SingleConnectionComponent implements OnInit {
 
   testFunc() {
     this.reservationService.testFunction(this.connection);
+  }
+
+  refreshSlots() {
+    this.getFreeSlots();
   }
 }

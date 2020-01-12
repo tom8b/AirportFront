@@ -19,6 +19,9 @@
           <td>{{ reservation.connection.flight_date }}</td>
           <td>{{ reservation.seat.row }}</td>
           <td>{{ reservation.seat.number }}</td>
+          <button (click)="deleteReservation(reservation.reservation_id)">
+            cancel
+          </button>
         </tr>
       </tbody>
     </table>

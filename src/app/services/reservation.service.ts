@@ -29,7 +29,7 @@ export class ReservationService {
   public reserveConnection(reservation: Reservation) {
     return this.http
       .post<Reservation>(
-        "http://localhost:8080/reservation/add",
+        "http://localhost:8080/reservation",
         JSON.stringify(reservation),
         {
           headers: this.headers
@@ -38,37 +38,15 @@ export class ReservationService {
       .subscribe();
   }
 
-  public changeStateOfSeat(seat: Seat) {
-    console.log("STRINGI" + JSON.stringify(seat));
-    let headerss = new HttpHeaders({
-      "Content-Type": "text/html",
-      "Access-Control-Allow-Origin": "http:/localhost:8080"
-    });
+  public changeStateOfSeat(id: number) {
     return this.http
-      .put<Seat>(
-        "http://localhost:8080/seat/changeState",
-        JSON.stringify(seat),
-        {
-          headers: headerss
-        }
-      )
+      .get<Reservation>("http://localhost:8080/seat/reserve/" + id)
       .subscribe();
   }
 
-  testFunction(connection: Connection) {
-    console.log("STRINGI" + JSON.stringify(connection));
-    let headerss = new HttpHeaders({
-      "Content-Type": "text/html"
-      // "Access-Control-Allow-Origin": "http:/localhost:8080"
-    });
+  deleteReservation(id: number) {
     return this.http
-      .put<Seat>(
-        "http://localhost:8080/seat/changeState",
-        JSON.stringify(connection),
-        {
-          headers: headerss
-        }
-      )
+      .get<Reservation>("http://localhost:8080/reservation/del/" + id)
       .subscribe();
   }
 }

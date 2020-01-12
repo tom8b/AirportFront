@@ -30,8 +30,8 @@ import { ConnectionListComponent } from "./components/connection-list/connection
 import { MatInputModule } from "@angular/material";
 import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { MatListModule } from "@angular/material/list";
-import { ReservationListComponent } from './components/reservation-list/reservation-list.component';
-
+import { ReservationListComponent } from "./components/reservation-list/reservation-list.component";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 //import { ConnectionListComponent } from './services/connection-list/connection-list.component';
 
 @NgModule({
@@ -48,6 +48,7 @@ import { ReservationListComponent } from './components/reservation-list/reservat
   imports: [
     BrowserModule,
     MatMenuModule,
+    MatProgressSpinnerModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
@@ -74,7 +75,7 @@ import { ReservationListComponent } from './components/reservation-list/reservat
     })
   ],
   bootstrap: [AppComponent],
-  exports: [MatMenuModule],
+  exports: [MatMenuModule, MatProgressSpinnerModule],
   providers: [ConnectionService]
 })
 export class AppModule {}
