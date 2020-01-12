@@ -8,6 +8,8 @@ import { ConnectionListComponent } from "./components/connection-list/connection
 import { LogoutComponent } from "./components/logout/logout.component";
 import { SingleConnectionComponent } from "./components/single-connection/single-connection.component";
 import { ReservationListComponent } from "./components/reservation-list/reservation-list.component";
+import { AddArticleComponent } from "./components/add-article/add-article.component";
+import { ArticleListComponent } from "./components/article-list/article-list.component";
 
 const routes: Routes = [
   {
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: "connections", component: ConnectionListComponent },
   { path: "logout", component: LogoutComponent },
   { path: "connections/:id", component: SingleConnectionComponent },
-  { path: "reservations", component: ReservationListComponent }
+  { path: "reservations", component: ReservationListComponent },
+  { path: "addArticle", component: AddArticleComponent },
+  { path: "info", component: ArticleListComponent }
 ];
 
 @NgModule({
@@ -35,5 +39,7 @@ export const routingComponents = [
   LogoutComponent,
   ReservationListComponent,
   SingleConnectionComponent,
-  HomeComponent
+  HomeComponent,
+  AddArticleComponent,
+  ArticleListComponent
 ];

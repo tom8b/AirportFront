@@ -1,0 +1,8 @@
+<mat-card>
+  <h1>OUR NEWS</h1>
+  <mat-list-item *ngFor="let article of articles">
+    <h4>{{ article.title }}</h4>
+    <h6>{{ article.content }}</h6>
+    <h6>{{ article.author }}</h6>
+  </mat-list-item>
+</mat-card>

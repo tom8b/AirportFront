@@ -32,6 +32,7 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { MatListModule } from "@angular/material/list";
 import { ReservationListComponent } from "./components/reservation-list/reservation-list.component";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { ArticleListComponent } from "./components/article-list/article-list.component";
 //import { ConnectionListComponent } from './services/connection-list/connection-list.component';
 
 @NgModule({
@@ -43,7 +44,8 @@ import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
     FlightsSearcherComponent,
     routingComponents,
     ConnectionListComponent,
-    ReservationListComponent
+    ReservationListComponent,
+    ArticleListComponent
   ],
   imports: [
     BrowserModule,
