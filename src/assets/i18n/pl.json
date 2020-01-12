@@ -47,6 +47,8 @@
     "dateDesc": "data (najpierw najmłodsze)",
     "dateInc": "date (najpierw najstarsze)",
     "priceDesc": "cena (malejąco)",
-    "priceInc": "price (rosnąco)"
+    "priceInc": "price (rosnąco)",
+    "addArticle": "Dodaj Artykuł",
+    "add": "Dodaj"
   }
 }

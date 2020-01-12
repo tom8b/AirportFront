@@ -46,6 +46,8 @@
     "dateDesc": "date (early first)",
     "dateInc": "date (lately first)",
     "priceDesc": "price (expensive first)",
-    "priceInc": "price (cheap first)"
+    "priceInc": "price (cheap first)",
+    "addArticle": "Add Article",
+    "add": "Add"
   }
 }
