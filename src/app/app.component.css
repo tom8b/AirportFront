@@ -6,3 +6,18 @@ app-main-content {
 router-outlet {
   min-height: 1000px;
 }
+
+.languagepl {
+  width: 50px;
+  height: 30px;
+  border: none;
+  background: url("http://nspjlubin.salezjanie.pl/wp-content/uploads/2015/11/flaga-Polski.png");
+  background-size: 100%;
+}
+.languageeng {
+  width: 50px;
+  height: 30px;
+  border: none;
+  background: url("https://polki.pl/foto/16_9_LARGE_0200/czywiesz-pl-1567395.jpg");
+  background-size: 100%;
+}
