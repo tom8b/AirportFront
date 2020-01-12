@@ -30,8 +30,11 @@ export class AutenticationService {
 
   isUserLoggedIn() {
     let user = sessionStorage.getItem("userName");
-    //console.log(!(user === null));
     return !(user === null);
+  }
+
+  isAdminLoggedIn() {
+    return sessionStorage.getItem("userAdminPermission") === "true";
   }
 
   logOut() {

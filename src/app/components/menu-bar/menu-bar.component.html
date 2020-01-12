@@ -4,6 +4,14 @@
   >
 
   <a
+    *ngIf="loginService.isAdminLoggedIn()"
+    [translate]="'general.addArticle'"
+    class="choice"
+    routerLink="/addArticle"
+    routerLinkActive="active"
+  ></a>
+
+  <a
     *ngIf="loginService.isUserLoggedIn()"
     [translate]="'menu-bar.information'"
     class="choice"
