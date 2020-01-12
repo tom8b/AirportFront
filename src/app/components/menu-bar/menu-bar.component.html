@@ -2,6 +2,7 @@
   <span class="logo" routerLink="/home" routerLinkActive="active"
     >INTELIGENTNE LOTNISKO</span
   >
+  <b *ngIf="loginService.isAdminLoggedIn()">[admin]</b>
 
   <a
     *ngIf="loginService.isAdminLoggedIn()"
@@ -15,7 +16,7 @@
     *ngIf="loginService.isUserLoggedIn()"
     [translate]="'menu-bar.information'"
     class="choice"
-    routerLink="/home"
+    routerLink="/info"
     routerLinkActive="active"
   ></a>
 
