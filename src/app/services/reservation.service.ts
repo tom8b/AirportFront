@@ -29,7 +29,7 @@ export class ReservationService {
   public reserveConnection(reservation: Reservation) {
     return this.http
       .post<Reservation>(
-        "http://localhost:8080/reservation",
+        "http://localhost:8080/reservation/add",
         JSON.stringify(reservation),
         {
           headers: this.headers
