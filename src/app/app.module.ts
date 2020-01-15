@@ -33,6 +33,7 @@ import { MatListModule } from "@angular/material/list";
 import { ReservationListComponent } from "./components/reservation-list/reservation-list.component";
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { ArticleListComponent } from "./components/article-list/article-list.component";
+import { AddConnectionComponent } from './components/add-connection/add-connection.component';
 //import { ConnectionListComponent } from './services/connection-list/connection-list.component';
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ArticleListComponent } from "./components/article-list/article-list.com
     routingComponents,
     ConnectionListComponent,
     ReservationListComponent,
-    ArticleListComponent
+    ArticleListComponent,
+    AddConnectionComponent
   ],
   imports: [
     BrowserModule,

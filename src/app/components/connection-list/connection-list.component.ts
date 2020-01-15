@@ -27,4 +27,9 @@ export class ConnectionListComponent implements OnInit {
       this.connections
     );
   }
+
+  deleteConnection(id: number) {
+      this.connectionService.deleteConnection(id);
+      window.location.reload();
+    }
 }

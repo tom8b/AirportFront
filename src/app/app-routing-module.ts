@@ -10,6 +10,7 @@ import { SingleConnectionComponent } from "./components/single-connection/single
 import { ReservationListComponent } from "./components/reservation-list/reservation-list.component";
 import { AddArticleComponent } from "./components/add-article/add-article.component";
 import { ArticleListComponent } from "./components/article-list/article-list.component";
+import { AddConnectionComponent } from "./components/add-connection/add-connection.component";
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: "connections/:id", component: SingleConnectionComponent },
   { path: "reservations", component: ReservationListComponent },
   { path: "addArticle", component: AddArticleComponent },
-  { path: "info", component: ArticleListComponent }
+  { path: "info", component: ArticleListComponent },
+  { path: "addConnection", component: AddConnectionComponent }
 ];
 
 @NgModule({
@@ -41,5 +43,6 @@ export const routingComponents = [
   SingleConnectionComponent,
   HomeComponent,
   AddArticleComponent,
-  ArticleListComponent
+  ArticleListComponent,
+  AddConnectionComponent
 ];

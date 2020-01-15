@@ -7,6 +7,7 @@ import { Seat } from "src/app/models/Seat";
 import { Reservation } from "src/app/models/reservation";
 import { ClientService } from "src/app/services/client.service";
 import { Client } from "src/app/models/Client";
+import { Airport } from "src/app/models/Airport";
 
 @Component({
   selector: "app-single-connection",
@@ -21,6 +22,12 @@ export class SingleConnectionComponent implements OnInit {
   userSeat: Seat;
   reservation: Reservation;
   client: Client;
+
+  connectionId: number;
+   price: string;
+   starting_airport: Airport;
+   destination_airport: Airport;
+   flight_date: string;
 
   spresp: any;
   postdata: Reservation;
@@ -77,4 +84,14 @@ export class SingleConnectionComponent implements OnInit {
   refreshSlots() {
     this.getFreeSlots();
   }
+
+  updateConnection() {
+      this.connection.connectionId = this.connectionId;
+      this.connection.price = this.price;
+      this.connection.starting_airport = this.starting_airport;
+      this.connection.destination_airport = this.destination_airport;
+      this.connection.flight_date = this.flight_date;
+      this.connectionService.editConnection(this.connection);
+  }
+
 }

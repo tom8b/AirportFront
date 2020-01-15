@@ -49,5 +49,9 @@
     "priceInc": "price (cheap first)",
     "addArticle": "Add Article",
     "add": "Add"
+  },
+  "add-connection": {
+    "add": "Add connection",
+    "apply": "Apply"
   }
 }

@@ -28,6 +28,15 @@
             class="choice"
             >INFO</a
           >
+          <a
+            routerLink="/connections/{{ connection.connectionId }}"
+            routerLinkActive="active"
+            class="choice"
+          >edit</a
+          >
+          <button (click)="deleteConnection(connection.connectionId)">
+            delete
+          </button>
         </tr>
       </tbody>
     </table>

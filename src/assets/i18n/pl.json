@@ -38,7 +38,7 @@
   },
   "general": {
     "order_by": "Sortuj według",
-    "apply": "zastosuj",
+    "apply": "Zastosuj",
     "starting_airport": "Lotnisko startowe",
     "destination": "Cel",
     "price": "Cena",
@@ -50,5 +50,9 @@
     "priceInc": "cena (rosnąco)",
     "addArticle": "Dodaj Artykuł",
     "add": "Dodaj"
+  },
+  "add-connection": {
+    "add": "Dodaj połączenie",
+    "apply": "Zastosuj"
   }
 }

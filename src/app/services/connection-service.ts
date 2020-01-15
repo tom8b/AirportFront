@@ -6,6 +6,7 @@ import { Connection } from "../models/Connection";
 
 @Injectable()
 export class ConnectionService {
+  headers = new HttpHeaders({ "Content-Type": "application/json" });
   private usersUrl: string;
   private deleteConnectionUrl: string;
 
@@ -33,6 +34,32 @@ export class ConnectionService {
       "http://localhost:8080/connections/search/"
     );
   }
+
+  public editConnection(connection: Connection){
+    return this.http.post<Connection>(
+    "http://localhost:8080/connections/edit",
+            JSON.stringify(connection),
+            {
+              headers: this.headers
+            }
+            ).subscribe();
+  }
+
+  public addConnection(connection: Connection){
+      return this.http.post<Connection>(
+      "http://localhost:8080/connections/add",
+              JSON.stringify(connection),
+              {
+                headers: this.headers
+              }
+              ).subscribe();
+    }
+
+  deleteConnection(id: number) {
+      return this.http
+        .get<Connection>("http://localhost:8080/connections/del/" + id)
+        .subscribe();
+    }
 
   public filterConnections(
     order: string,
