@@ -29,4 +29,12 @@ export class ReservationListComponent implements OnInit {
         this.reservations = data;
       });
   }
+
+  checkDateOfReservation() {
+    //reservation.connection.flight_date
+    //SPRAWDZE DATE TERAZNIEJSZA I ODJME OD TEJ Z LOTU
+    //NA TEJ PODSTAWIE : 5 H PRZED LOTEM NIE MOZNA CANCELOWAC
+    // 5H - 0 JEST JAKIS NAPIS: "MASZ NIEDLUGO LOT"
+    // PO LOCIE NAPIS TYPU: "MAMY NADZIEJE ZE CI SIE PODOBALO"
+  }
 }
