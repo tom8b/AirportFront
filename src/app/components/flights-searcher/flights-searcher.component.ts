@@ -51,4 +51,17 @@ export class FlightsSearcherComponent {
       this.avaiableConnections
     );
   }
+
+  isActual(id: number): boolean {
+    var reservationDate = new Date(this.avaiableConnections[id].flight_date);
+
+    var today = new Date();
+    var diff = reservationDate.getTime() - today.getTime();
+    var days = Math.floor(diff / (60 * 60 * 24 * 1000));
+    var hours = Math.floor(diff / (60 * 60 * 1000)) - days * 24;
+
+    console.log(hours);
+    if (hours > 5 && diff > 0) return true;
+    else return false;
+  }
 }

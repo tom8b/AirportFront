@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Connection } from "../../models/Connection";
 import { ConnectionService } from "../../services/connection-service";
 import { Airport } from "../../models/Airport";
+import { AutenticationService } from "src/app/services/login/autentication.service";
 
 @Component({
   selector: "app-connection-list",
@@ -11,7 +12,10 @@ import { Airport } from "../../models/Airport";
 export class ConnectionListComponent implements OnInit {
   connections: Connection[];
   order: string = "Date";
-  constructor(private connectionService: ConnectionService) {}
+  constructor(
+    private connectionService: ConnectionService,
+    public loginService: AutenticationService
+  ) {}
 
   ngOnInit() {
     this.connectionService.getAll().subscribe(data => {
@@ -41,7 +45,6 @@ export class ConnectionListComponent implements OnInit {
     var days = Math.floor(diff / (60 * 60 * 24 * 1000));
     var hours = Math.floor(diff / (60 * 60 * 1000)) - days * 24;
 
-    console.log(hours);
     if (hours > 5 && diff > 0) return true;
     else return false;
   }
