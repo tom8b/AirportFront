@@ -24,10 +24,10 @@ export class SingleConnectionComponent implements OnInit {
   client: Client;
 
   connectionId: number;
-   price: string;
-   starting_airport: Airport;
-   destination_airport: Airport;
-   flight_date: string;
+  price: string;
+  starting_airport: Airport;
+  destination_airport: Airport;
+  flight_date: Date;
 
   spresp: any;
   postdata: Reservation;
@@ -86,12 +86,11 @@ export class SingleConnectionComponent implements OnInit {
   }
 
   updateConnection() {
-      this.connection.connectionId = this.connectionId;
-      this.connection.price = this.price;
-      this.connection.starting_airport = this.starting_airport;
-      this.connection.destination_airport = this.destination_airport;
-      this.connection.flight_date = this.flight_date;
-      this.connectionService.editConnection(this.connection);
+    this.connection.connectionId = this.connectionId;
+    this.connection.price = this.price;
+    this.connection.starting_airport = this.starting_airport;
+    this.connection.destination_airport = this.destination_airport;
+    this.connection.flight_date = this.flight_date;
+    this.connectionService.editConnection(this.connection);
   }
-
 }

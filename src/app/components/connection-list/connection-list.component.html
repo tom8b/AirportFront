@@ -13,22 +13,25 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let connection of connections">
+        <tr *ngFor="let connection of connections; let i= index"
+          [attr.data-index]="i">
           <td>{{ connection.starting_airport.city.name }}</td>
           <td>{{ connection.destination_airport.city.name }}</td>
           <td>{{ connection.price }}</td>
           <td>
-            <a href="mailto:{{ connection.flight_date }}">{{
-              connection.flight_date
-            }}</a>
+            {{
+            connection.flight_date | date:'medium'
+            }}
           </td>
           <a
+            *ngIf="isActual(i)"
             routerLink="/connections/{{ connection.connectionId }}"
             routerLinkActive="active"
-            class="choice"
-            >INFO</a
-          >
-          <button (click)="deleteConnection(connection.connectionId)">
+            class="choice">Reserve</a>
+          <a *ngIf="!isActual(i)"
+            style="color:green">Completed</a>
+          <button (click)="deleteConnection(connection.connectionId)"
+            style="float:right; margin-right:15px;">
             delete
           </button>
         </tr>
@@ -38,18 +41,13 @@
   <h4 [translate]="'general.order_by'">Order by</h4>
   <mat-form-field>
     <select matNativeControl [(ngModel)]="order">
-      <option [translate]="'general.dateInc'" value="DateInc"
-        >Date (early first)</option
-      >
-      <option [translate]="'general.dateDesc'" value="DateDesc"
-        >Date (lately first)</option
-      >
-      <option [translate]="'general.priceInc'" value="PriceInc"
-        >Price (cheap first)</option
-      >
-      <option [translate]="'general.priceDesc'" value="PriceDesc"
-        >Price (expensive first)</option
-      >
+      <option [translate]="'general.dateInc'" value="DateInc">Date (early first)</option>
+      <option [translate]="'general.dateDesc'" value="DateDesc">Date (lately
+        first)</option>
+      <option [translate]="'general.priceInc'" value="PriceInc">Price (cheap
+        first)</option>
+      <option [translate]="'general.priceDesc'" value="PriceDesc">Price
+        (expensive first)</option>
     </select>
   </mat-form-field>
   <button (click)="applyFilter()" [translate]="'general.apply'">apply</button>

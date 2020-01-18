@@ -29,7 +29,20 @@ export class ConnectionListComponent implements OnInit {
   }
 
   deleteConnection(id: number) {
-      this.connectionService.deleteConnection(id);
-      window.location.reload();
-    }
+    this.connectionService.deleteConnection(id);
+    window.location.reload();
+  }
+
+  isActual(id: number): boolean {
+    var reservationDate = new Date(this.connections[id].flight_date);
+
+    var today = new Date();
+    var diff = reservationDate.getTime() - today.getTime();
+    var days = Math.floor(diff / (60 * 60 * 24 * 1000));
+    var hours = Math.floor(diff / (60 * 60 * 1000)) - days * 24;
+
+    console.log(hours);
+    if (hours > 5 && diff > 0) return true;
+    else return false;
+  }
 }

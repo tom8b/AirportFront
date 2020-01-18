@@ -5,5 +5,5 @@ export class Connection {
   price: string;
   starting_airport: Airport;
   destination_airport: Airport;
-  flight_date: string;
+  flight_date: Date;
 }

@@ -3,25 +3,43 @@
     <table class="table table-bordered table-striped">
       <thead class="thead-dark">
         <tr>
+          <th [translate]="'general.starting_airport'" scope="col">start</th>
           <th [translate]="'general.destination'" scope="col">Destination</th>
           <th [translate]="'general.price'" scope="col">Price</th>
           <th [translate]="'general.date'" scope="col">Date</th>
-          <th [translate]="'general.more'" scope="col">More</th>
           <th scope="col">Row</th>
           <th scope="col">Number</th>
+          <th [translate]="'general.more'" scope="col">More</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let reservation of reservations">
+        <tr *ngFor="let reservation of reservations; let i= index"
+          [attr.data-index]="i">
+
           <td>{{ reservation.connection.starting_airport.city.name }}</td>
           <td>{{ reservation.connection.destination_airport.city.name }}</td>
           <td>{{ reservation.connection.price }}</td>
-          <td>{{ reservation.connection.flight_date }}</td>
+          <td>{{ reservation.connection.flight_date | date:'medium'}}</td>
           <td>{{ reservation.seat.row }}</td>
           <td>{{ reservation.seat.number }}</td>
-          <button (click)="deleteReservation(reservation.reservation_id)">
-            cancel
-          </button>
+          <td>
+            <button
+              (click)="deleteReservation(reservation.reservation_id)"
+              *ngIf="checkDateOfReservation(i)>16">
+              cancel
+            </button>
+            <div
+              *ngIf="checkDateOfReservation(i)<0"
+              style="color:green">
+              Completed
+
+            </div>
+            <div
+              *ngIf="checkDateOfReservation(i)<16 && checkDateOfReservation(i)>0"
+              style="color:red">
+              Flight soon({{checkDateOfReservation(i)}}H)<br>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>

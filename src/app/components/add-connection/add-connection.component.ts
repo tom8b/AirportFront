@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { Validators, FormControl } from "@angular/forms";
 import { Connection } from "src/app/models/Connection";
 import { Airport } from "src/app/models/Airport";
@@ -6,21 +6,26 @@ import { ConnectionService } from "src/app/services/connection-service";
 import { AirportService } from "src/app/services/airport.service";
 
 @Component({
-  selector: 'app-add-connection',
-  templateUrl: './add-connection.component.html',
-  styleUrls: ['./add-connection.component.css']
+  selector: "app-add-connection",
+  templateUrl: "./add-connection.component.html",
+  styleUrls: ["./add-connection.component.css"]
 })
 export class AddConnectionComponent implements OnInit {
-connection: Connection = null;
-    price: string;
-    starting_airport: Airport;
-    destination_airport: Airport;
-    flight_date: string;
-    airports: Airport[];
+  connection: Connection = null;
+  price: string;
+  starting_airport: Airport;
+  destination_airport: Airport;
+  flight_date: Date;
+  airports: Airport[];
 
-  constructor(private connectionService: ConnectionService, private airportService: AirportService) {}
+  constructor(
+    private connectionService: ConnectionService,
+    private airportService: AirportService
+  ) {}
 
-  ngOnInit() {this.getAllAirports}
+  ngOnInit() {
+    this.getAllAirports();
+  }
 
   createConnection() {
     this.connection = new Connection();
@@ -34,10 +39,8 @@ connection: Connection = null;
   }
 
   getAllAirports() {
-      this.airportService
-        .getAllAirports()
-        .subscribe(x => {
-          this.airports = x;
-        });
-    }
+    this.airportService.getAllAirports().subscribe(x => {
+      this.airports = x;
+    });
+  }
 }

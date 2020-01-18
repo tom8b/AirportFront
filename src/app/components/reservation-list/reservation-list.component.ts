@@ -13,6 +13,8 @@ export class ReservationListComponent implements OnInit {
   reservations: Reservation[];
   constructor(private reservationService: ReservationService) {}
   private id = sessionStorage.getItem("userId");
+
+  hourToFlight: number;
   ngOnInit() {
     this.getUserReservations();
   }
@@ -28,5 +30,20 @@ export class ReservationListComponent implements OnInit {
       .subscribe(data => {
         this.reservations = data;
       });
+  }
+
+  checkDateOfReservation(id: number) {
+    var reservationDate = new Date(
+      this.reservations[id].connection.flight_date
+    );
+
+    var today = new Date();
+    var today = new Date();
+    var diff = reservationDate.getTime() - today.getTime();
+    var days = Math.floor(diff / (60 * 60 * 24 * 1000));
+    var hours = Math.floor(diff / (60 * 60 * 1000)) - days * 24;
+
+    if (diff > 0) return hours;
+    else return -hours;
   }
 }
