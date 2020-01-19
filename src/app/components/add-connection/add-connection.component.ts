@@ -29,8 +29,8 @@ export class AddConnectionComponent implements OnInit {
   }
 
   createConnection() {
+    console.log(this.starting_airport);
     this.connection = new Connection();
-
     this.connection.price = this.price;
     this.connection.starting_airport = this.starting_airport;
     this.connection.destination_airport = this.destination_airport;

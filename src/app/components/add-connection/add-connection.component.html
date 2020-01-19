@@ -1,50 +1,58 @@
 <mat-card class="my-card">
-  <mat-card-header>
-    <mat-card-title [translate]="'add-connection.add'"></mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <form class="my-form">
+  <!-- <mat-form-field class="example-full-width">
+    <input
+      [(ngModel)]="starting_airport"
+      type="text"
+      matInput
+      placeholder="From"
+      [matAutocomplete]="autoGroup"
+    />
+    <mat-autocomplete #autoGroup="matAutocomplete">
+      <mat-option *ngFor="let airport of airports" [value]="airport">
+        {{ airport.city.name }}, {{ airport.address }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field> -->
 
-      <mat-form-field>
-      <mat-label>Starting airport</mat-label>
-      <mat-select [(ngModel)]="starting_airport">
-        <mat-option *ngFor="let airport of airports" [value]="airport">
-          Airport:{{ airport.city.name }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+  <mat-form-field>
+    <mat-label>Starting airport</mat-label>
+    <mat-select [(ngModel)]="starting_airport">
+      <mat-option *ngFor="let airport of airports" [value]="airport"
+        >{{ airport.city.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-      <mat-form-field>
-        <mat-label>Destination airport</mat-label>
-        <mat-select [(ngModel)]="destination_airport">
-          <mat-option *ngFor="let airport of airports" [value]="airport">
-            Airport:{{ airport.city.name }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+  <mat-form-field>
+    <mat-label>Destination airport</mat-label>
+    <mat-select [(ngModel)]="destination_airport">
+      <mat-option *ngFor="let airport of airports" [value]="airport"
+        >{{ airport.city.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-      <mat-form-field class="full-width" name="lname">
-        <mat-label>Price</mat-label>
-        <input
-          matInput
-          placeholder="Price"
-          [(ngModel)]="price"
-          name="price"
-          required
-        />
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>Flight date</mat-label>
-        <input
-          matInput
-          placeholder="Flight date"
-          [(ngModel)]="flight_date"
-          name="flightdate"
-          required
-        />
-      </mat-form-field>
-    </form>
-  </mat-card-content>
+  <mat-form-field class="full-width" name="lname">
+    <mat-label>Price</mat-label>
+    <input
+      matInput
+      placeholder="Price"
+      [(ngModel)]="price"
+      name="price"
+      required
+    />
+  </mat-form-field>
+  <mat-form-field class="full-width">
+    <mat-label>Flight date</mat-label>
+    <input
+      matInput
+      placeholder="Flight date"
+      [(ngModel)]="flight_date"
+      name="flightdate"
+      required
+    />
+  </mat-form-field>
+
   <mat-card-actions>
     <button
       mat-raised-button
