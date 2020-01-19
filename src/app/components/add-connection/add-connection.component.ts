@@ -18,6 +18,8 @@ export class AddConnectionComponent implements OnInit {
   flight_date: Date;
   airports: Airport[];
   airport: Airport;
+  date: string;
+  time: string;
 
   constructor(
     private connectionService: ConnectionService,
@@ -34,7 +36,8 @@ export class AddConnectionComponent implements OnInit {
     this.connection.price = this.price;
     this.connection.starting_airport = this.starting_airport;
     this.connection.destination_airport = this.destination_airport;
-    this.connection.flight_date = this.flight_date;
+    this.connection.flight_date = new Date(this.date+'T'+this.time);
+    this.connection.flight_date.setHours(this.connection.flight_date.getHours() + 1);
     const myObjStr = JSON.stringify(this.connection);
     console.log(JSON.parse(myObjStr));
     this.connectionService.addConnection(this.connection);
