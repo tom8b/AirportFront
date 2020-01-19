@@ -14,6 +14,14 @@
   ></a>
 
   <a
+    *ngIf="loginService.isAdminLoggedIn()"
+    [translate]="'general.addConnection'"
+    class="choice"
+    routerLink="/addConnection"
+    routerLinkActive="active"
+  ></a>
+
+  <a
     *ngIf="loginService.isUserLoggedIn()"
     [translate]="'menu-bar.information'"
     class="choice"

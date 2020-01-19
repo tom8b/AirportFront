@@ -48,7 +48,8 @@
     "priceDesc": "price (expensive first)",
     "priceInc": "price (cheap first)",
     "addArticle": "Add Article",
-    "add": "Add"
+    "add": "Add",
+    "addConnection": "Add connection"
   },
   "add-connection": {
     "add": "Add connection",

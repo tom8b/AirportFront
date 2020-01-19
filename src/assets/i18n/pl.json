@@ -49,7 +49,8 @@
     "priceDesc": "cena (malejąco)",
     "priceInc": "cena (rosnąco)",
     "addArticle": "Dodaj Artykuł",
-    "add": "Dodaj"
+    "add": "Dodaj",
+    "addConnection": "Dodaj połączenie"
   },
   "add-connection": {
     "add": "Dodaj połączenie",

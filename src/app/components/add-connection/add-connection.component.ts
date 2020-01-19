@@ -11,12 +11,13 @@ import { AirportService } from "src/app/services/airport.service";
   styleUrls: ["./add-connection.component.css"]
 })
 export class AddConnectionComponent implements OnInit {
-  connection: Connection = null;
+  connection: Connection;
   price: string;
   starting_airport: Airport;
   destination_airport: Airport;
   flight_date: Date;
   airports: Airport[];
+  airport: Airport;
 
   constructor(
     private connectionService: ConnectionService,
@@ -34,7 +35,8 @@ export class AddConnectionComponent implements OnInit {
     this.connection.starting_airport = this.starting_airport;
     this.connection.destination_airport = this.destination_airport;
     this.connection.flight_date = this.flight_date;
-
+    const myObjStr = JSON.stringify(this.connection);
+    console.log(JSON.parse(myObjStr));
     this.connectionService.addConnection(this.connection);
   }
 

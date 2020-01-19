@@ -5,11 +5,11 @@
   <mat-card-content>
     <form class="my-form">
       <mat-form-field class="full-width">
-        <mat-label>First Name</mat-label>
+        <mat-label>Login</mat-label>
         <input
           matInput
           placeholder="login"
-          name="fname"
+          name="login"
           required
           [(ngModel)]="login"
         />
@@ -61,6 +61,7 @@
       color="primary"
       [translate]="'register.register-button'"
       (click)="registerUser()"
+      routerLink="/login"
     ></button>
   </mat-card-actions>
 </mat-card>
