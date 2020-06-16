@@ -23,11 +23,11 @@
   "menu-bar": {
     "login": "Login",
     "logout": "Logout",
-    "reservations": "Reservations",
+    "reservations": "Employees",
     "register": "Register",
     "information": "Information",
     "search": "Search",
-    "connections": "Connections"
+    "connections": "Parcels"
   },
   "footer": {
     "service": "Service",
@@ -38,9 +38,9 @@
   "general": {
     "order_by": "Order by",
     "apply": "Apply",
-    "starting_airport": "Starting Airport",
+    "starting_airport": "Start",
     "destination": "Destination",
-    "price": "Price",
+    "price": "Weight(grams)",
     "date": "Date",
     "more": "More",
     "dateDesc": "date (early first)",
@@ -54,5 +54,10 @@
   "add-connection": {
     "add": "Add connection",
     "apply": "Apply"
+  },
+  "employees": {
+    "email": "email",
+    "name": "name",
+    "surname": "surname"
   }
 }

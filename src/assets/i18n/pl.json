@@ -23,25 +23,25 @@
   "menu-bar": {
     "login": "Zaloguj",
     "logout": "Wyloguj",
-    "reservations": "Rezerwacje",
+    "reservations": "Pracownicy",
     "register": "Rejestracja",
     "register-button": "Zarajestruj",
     "information": "informacje",
     "search": "Szukaj",
-    "connections": "Połączenia"
+    "connections": "Przesyłki"
   },
   "footer": {
     "service": "Obsługa klienta",
-    "about": "O lotach",
+    "about": "O naszej firmie",
     "contact": "Kontakt",
     "more_info": "Sczegóły"
   },
   "general": {
     "order_by": "Sortuj według",
     "apply": "Zastosuj",
-    "starting_airport": "Lotnisko startowe",
+    "starting_airport": "Start",
     "destination": "Cel",
-    "price": "Cena",
+    "price": "Waga(gramy)",
     "date": "Data",
     "more": "Więcej",
     "dateDesc": "data (najpierw najmłodsze)",
@@ -55,5 +55,10 @@
   "add-connection": {
     "add": "Dodaj połączenie",
     "apply": "Zastosuj"
+  },
+  "employees": {
+    "email": "email",
+    "name": "imię",
+    "surname": "nazwisko"
   }
 }
