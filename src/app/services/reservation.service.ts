@@ -7,7 +7,7 @@ import { CATCH_ERROR_VAR } from "@angular/compiler/src/output/output_ast";
 import { Connection } from "../models/Connection";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class ReservationService {
   headers = new HttpHeaders({ "Content-Type": "application/json" });
@@ -32,7 +32,7 @@ export class ReservationService {
         "http://localhost:8080/reservation/add",
         JSON.stringify(reservation),
         {
-          headers: this.headers
+          headers: this.headers,
         }
       )
       .subscribe();

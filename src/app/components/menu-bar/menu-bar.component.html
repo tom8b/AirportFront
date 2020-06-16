@@ -1,8 +1,8 @@
 <mat-toolbar>
-  <img class="image" src="https://i.ibb.co/WkG2j49/Airport.jpg" alt="Airport" width="300" height="70">
-  <span class="logo" routerLink="/home" routerLinkActive="active"
-    >INTELIGENTNE LOTNISKO</span
-  >
+  <img class="image" src="https://i.ibb.co/WkG2j49/Airport.jpg" alt="Airport"
+    width="300" height="70">
+  <span class="logo" routerLink="/home" routerLinkActive="active">INTELIGENTNE
+    LOTNISKO</span>
   <b *ngIf="loginService.isAdminLoggedIn()">[admin]</b>
 
   <a
@@ -10,67 +10,58 @@
     [translate]="'general.addArticle'"
     class="choice"
     routerLink="/addArticle"
-    routerLinkActive="active"
-  ></a>
+    routerLinkActive="active"></a>
 
   <a
     *ngIf="loginService.isAdminLoggedIn()"
     [translate]="'general.addConnection'"
     class="choice"
     routerLink="/addConnection"
-    routerLinkActive="active"
-  ></a>
+    routerLinkActive="active"></a>
 
   <a
     *ngIf="loginService.isUserLoggedIn()"
     [translate]="'menu-bar.information'"
     class="choice"
     routerLink="/info"
-    routerLinkActive="active"
-  ></a>
+    routerLinkActive="active"></a>
 
   <a
     *ngIf="loginService.isUserLoggedIn()"
     [translate]="'menu-bar.reservations'"
     class="choice"
-    routerLink="/reservations"
-    routerLinkActive="active"
-  ></a>
+    routerLink="/employees"
+    routerLinkActive="active"></a>
 
   <a
     *ngIf="!loginService.isUserLoggedIn()"
     [translate]="'menu-bar.register'"
     routerLink="/register"
     routerLinkActive="active"
-    class="choice"
-  ></a>
+    class="choice"></a>
 
   <a
     *ngIf="!loginService.isUserLoggedIn()"
     routerLink="/login"
     routerLinkActive="active"
-    [translate]="'menu-bar.login'"
-  ></a>
+    [translate]="'menu-bar.login'"></a>
 
   <a
     *ngIf="loginService.isUserLoggedIn()"
-    routerLink="/connections"
+    routerLink="/parcels"
     routerLinkActive="active"
-    [translate]="'menu-bar.connections'"
-  ></a>
+    [translate]="'menu-bar.connections'"></a>
 
   <a
     *ngIf="loginService.isUserLoggedIn()"
     routerLink="/search"
     routerLinkActive="active"
-    [translate]="'menu-bar.search'"
-  ></a>
+    [translate]="'menu-bar.search'"></a>
 
   <a
     *ngIf="loginService.isUserLoggedIn()"
     [translate]="'menu-bar.logout'"
     class="choice"
     routerLink="/logout"
-    routerLinkActive="active"
-  ></a>
+    routerLinkActive="active"></a>
 </mat-toolbar>

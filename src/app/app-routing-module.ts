@@ -15,23 +15,23 @@ import { AddConnectionComponent } from "./components/add-connection/add-connecti
 const routes: Routes = [
   {
     path: "login",
-    component: LoginComponent
+    component: LoginComponent,
   },
   { path: "register", component: RegisterComponent },
   { path: "home", component: HomeComponent },
   { path: "search", component: FlightsSearcherComponent },
-  { path: "connections", component: ConnectionListComponent },
+  { path: "parcels", component: ConnectionListComponent },
   { path: "logout", component: LogoutComponent },
   { path: "connections/:id", component: SingleConnectionComponent },
-  { path: "reservations", component: ReservationListComponent },
+  { path: "employees", component: ReservationListComponent },
   { path: "addArticle", component: AddArticleComponent },
   { path: "info", component: ArticleListComponent },
-  { path: "addConnection", component: AddConnectionComponent }
+  { path: "addConnection", component: AddConnectionComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}
 export const routingComponents = [
@@ -44,5 +44,5 @@ export const routingComponents = [
   HomeComponent,
   AddArticleComponent,
   ArticleListComponent,
-  AddConnectionComponent
+  AddConnectionComponent,
 ];

@@ -1,22 +1,29 @@
 import { Component, OnInit } from "@angular/core";
 import { Reservation } from "../../models/Reservation";
 import { ReservationService } from "../../services/reservation.service";
+import { ClientService } from "../../services/client.service";
 import { Observable } from "rxjs";
+import { Client } from "src/app/models/Client";
 
 @Component({
   selector: "app-reservation-list",
   templateUrl: "./reservation-list.component.html",
-  styleUrls: ["./reservation-list.component.css"]
+  styleUrls: ["./reservation-list.component.css"],
 })
 export class ReservationListComponent implements OnInit {
   deletedID: number;
   reservations: Reservation[];
-  constructor(private reservationService: ReservationService) {}
+  employees: Client[];
+  constructor(
+    private reservationService: ReservationService,
+    private clientService: ClientService
+  ) {}
   private id = sessionStorage.getItem("userId");
 
   hourToFlight: number;
   ngOnInit() {
     this.getUserReservations();
+    this.getEmployees();
   }
 
   deleteReservation(id: number) {
@@ -24,10 +31,16 @@ export class ReservationListComponent implements OnInit {
     window.location.reload();
   }
 
+  getEmployees() {
+    this.clientService.getEmployees().subscribe((data) => {
+      this.employees = data;
+    });
+  }
+
   getUserReservations() {
     this.reservationService
       .getAllReservationsByUserId(this.id)
-      .subscribe(data => {
+      .subscribe((data) => {
         this.reservations = data;
       });
   }
