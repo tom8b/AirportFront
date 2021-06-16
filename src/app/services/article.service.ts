@@ -15,7 +15,7 @@ export class ArticleService {
   public addArticle(article: AdminArticle) {
     return this.http
       .post<AdminArticle>(
-        "http://localhost:8080/article/add",
+        "https://localhost:44371/api/values/addArticle",
         JSON.stringify(article),
         {
           headers: this.headers
@@ -25,6 +25,6 @@ export class ArticleService {
   }
 
   public getArticles(): Observable<AdminArticle[]> {
-    return this.http.get<AdminArticle[]>("http://localhost:8080/article/all");
+    return this.http.get<AdminArticle[]>("https://localhost:44371/api/values/allArticles");
   }
 }

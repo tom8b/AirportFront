@@ -10,6 +10,6 @@ export class AirportService {
   constructor(private http: HttpClient) {}
 
   public getAllAirports(): Observable<Airport[]> {
-    return this.http.get<Airport[]>("http://localhost:8080/airport/all");
+    return this.http.get<Airport[]>("https://localhost:44371/api/values/getAirports");
   }
 }

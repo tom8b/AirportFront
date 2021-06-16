@@ -47,7 +47,7 @@ export class ConnectionService {
 
   public addConnection(connection: Connection){
       return this.http.post<Connection>(
-      "http://localhost:8080/connections/add",
+      "https://localhost:44371/api/values/addConnection",  
               JSON.stringify(connection),
               {
                 headers: this.headers
@@ -57,7 +57,7 @@ export class ConnectionService {
 
   deleteConnection(id: number) {
       return this.http
-        .get<Connection>("http://localhost:8080/connections/del/" + id)
+        .get<Connection>("https://localhost:44371/api/values/deleteConnection/" + id)
         .subscribe();
     }
 

@@ -11,20 +11,21 @@ export class AutenticationService {
 
   public tryAuthenticateAccount(username, password): Observable<Client> {
     console.log(username + "+" + password);
-    return this.http.get<Client>(
-      "http://localhost:8080/client/login/" + username + "+" + password
+    return this.http.post<Client>(
+      "https://localhost:44371/api/values/login", {login: username, password: password}
     );
   }
 
   login(user: Client) {
+    console.log(user)
     sessionStorage.setItem("userName", user.name);
     sessionStorage.setItem("userSurname", user.surname);
     sessionStorage.setItem("userEmail", user.email);
     sessionStorage.setItem("userLogin", user.login);
-    sessionStorage.setItem("userId", user.client_id.toString());
+    sessionStorage.setItem("userId", user.client_ID.toString());
     sessionStorage.setItem(
       "userAdminPermission",
-      user.admin_permission.toString()
+      user.admin_Permission.toString()
     );
   }
 

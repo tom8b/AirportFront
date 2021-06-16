@@ -1,10 +1,10 @@
 export class Client {
-  client_id: number;
+  client_ID: number;
   login: string;
   password: string;
   name: string;
   surname: string;
   email: string;
-  admin_permission: boolean;
+  admin_Permission: boolean;
   //reservations: string[];
 }

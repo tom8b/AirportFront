@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
     this.user.name = this.firstname;
     this.user.surname = this.surname;
     this.user.password = this.password;
-    this.user.admin_permission = false;
+    this.user.admin_Permission = false;
     // this.user.reservations = [];
 
     this.registerService.registerNewClient(this.user);
